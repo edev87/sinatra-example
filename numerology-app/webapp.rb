@@ -40,7 +40,7 @@ return number
     end
 
     def get_messages()
-       list = Array["Your numerology number is 1.One is the leader. The number one indicates the ability to stand alone, and is a strong vibration. Ruled by the Sun.",
+       list = ["Your numerology number is 1.One is the leader. The number one indicates the ability to stand alone, and is a strong vibration. Ruled by the Sun.",
         "Your numerology number is 3.Number Three is a sociable, friendly, and outgoing vibration. Kind, positive, and optimistic, Three's enjoy life and have a good sense of humor. Ruled by Jupiter.",
        "Your numerology number is 4.This is the worker. Practical, with a love of detail, Fours are trustworthy, hard-working, and helpful. Ruled by Uranus.", 
        "Your numerology number is 5.TThis is the freedom lover. The number five is an intellectual vibration. These are 'idea' people with a love of variety and the ability to adapt to most situations. Ruled by Mercury.",
@@ -51,6 +51,8 @@ return number
        "Uh oh! Your birth path number is not 1-9!"]
     end
 
+   
+
 
 get '/:birthdate' do 
     birthdate = params[:birthdate]
@@ -59,8 +61,8 @@ get '/:birthdate' do
     erb :index
 end
 
-get  '/newpage' do 
-    @list = get_messages()
-    erb :pageone
+get '/pageone' do 
+    get_messages()
+     erb :pageone
 end
 
